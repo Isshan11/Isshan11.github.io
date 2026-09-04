@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://isshan-marwah-portfolio.well-cod-4074.chatgpt.site'),
+  metadataBase: new URL('https://isshan-marwah-portfolio.ishum1106.chatgpt.site'),
   title: 'Isshan Marwah — Technical Artist & Game Developer',
   description: 'Technical artist and game developer building Unreal Engine gameplay systems, procedural tools, and game-ready 3D worlds.',
   openGraph: {
