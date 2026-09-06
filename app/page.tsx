@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-visual profile-visual">
-          <img src="/media/isshan-marwah.jpg" alt="Portrait of Isshan Marwah" />
+          <img src="/media/isshan-marwah-niagara.png" alt="Portrait of Isshan Marwah at Niagara Falls" />
           <div className="hero-grid" aria-hidden="true" />
           <div className="visual-label"><span>Game development &amp; interactive media</span><strong>Technical Artist</strong></div>
           <div className="visual-coordinates">ONTARIO / CANADA</div>
