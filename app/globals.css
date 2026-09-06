@@ -84,7 +84,7 @@ footer { display: grid; grid-template-columns: 1fr auto; gap: 50px; padding: cla
 .hero-about p { margin-bottom: 12px; color: #b8bdc6; font-size: clamp(.95rem, 1.08vw, 1.08rem); line-height: 1.65; }
 .profile-visual { display: grid; place-items: center; min-height: 620px; padding: 72px 5vw 116px; background: #0d1014; }
 .profile-visual img { position: relative; z-index: 1; width: min(100%, 420px); height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 43%; border: 1px solid rgba(184,255,50,.38); box-shadow: 18px 18px 0 rgba(87,231,227,.1); filter: saturate(.82) contrast(1.04); }
-.profile-visual::after { z-index: 1; background: radial-gradient(circle at 50% 44%, rgba(87,231,227,.12), transparent 47%); pointer-events: none; }
+.profile-visual::after, .profile-visual .hero-grid { display: none; }
 .profile-visual:hover img { transform: scale(1.018); }
 
 .reveal-panel { margin-top: 28px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
