@@ -7,12 +7,12 @@ const systemProjects = [
 ];
 
 const visualProjects = [
-  { title: 'Space Harbor', type: 'Sci-fi environment', image: '/media/space-harbor.webp', className: 'wide' },
-  { title: 'Control Room', type: 'Environment study', image: '/media/control-room.webp', className: '' },
-  { title: 'Cryopod Room', type: 'Modular environment', image: '/media/cryopod-room.webp', className: '' },
-  { title: 'Hard-surface Flamethrower', type: 'Game-ready prop', image: '/media/flamethrower.webp', className: 'wide' },
-  { title: 'Rock Character', type: 'Stylized character', image: '/media/rock-character.webp', className: '' },
-  { title: 'Blade Studies', type: 'Hard-surface modeling', image: '/media/sword.webp', className: '' },
+  { title: 'Space Harbor', type: 'Sci-fi environment', image: '/media/space-harbor.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/RKAVXO' },
+  { title: 'Control Room', type: 'Environment study', image: '/media/control-room.webp', className: '', href: 'https://isshan11.artstation.com/projects/rlay06' },
+  { title: 'Cryopod Room', type: 'Modular environment', image: '/media/cryopod-room.webp', className: '', href: 'https://isshan11.artstation.com/projects/L4AVr5' },
+  { title: 'Storage Room', type: 'Sci-fi environment', image: '/media/storage-room.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lGAYRY' },
+  { title: 'Rock Character', type: 'Stylized character', image: '/media/rock-character.webp', className: '', href: 'https://isshan11.artstation.com/projects/WdmZYQ' },
+  { title: 'Blade Studies', type: 'Hard-surface modeling', image: '/media/sword.webp', className: '', href: 'https://isshan11.artstation.com/projects/K3AyDr' },
 ];
 
 const moreGames = [
@@ -36,10 +36,14 @@ function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
 
 function ArtCard({ project, index }: { project: (typeof visualProjects)[number], index: number }) {
   return (
-    <article className={`art-card ${project.className}`}>
+    <a className={`art-card ${project.className}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on ArtStation`}>
       <img src={project.image} alt={`${project.title}, ${project.type} by Isshan Marwah`} />
-      <div className="art-overlay"><span>{String(index + 1).padStart(2, '0')} / {project.type}</span><h3>{project.title}</h3></div>
-    </article>
+      <div className="art-overlay">
+        <span>{String(index + 1).padStart(2, '0')} / {project.type}</span>
+        <h3>{project.title}</h3>
+        <span className="art-link-hint">View on ArtStation <ArrowUpRight size={14} /></span>
+      </div>
+    </a>
   );
 }
 
@@ -163,6 +167,7 @@ export default function Home() {
         <div className="footer-links">
           <a href="mailto:isshanmarwah@gmail.com"><Mail size={17} /> Email me</a>
           <a href="tel:+19052437529"><Phone size={16} /> +1 905 243 7529</a>
+          <a href="https://www.artstation.com/isshan11" target="_blank" rel="noreferrer">ArtStation <ArrowUpRight size={15} /></a>
           <a href="https://www.behance.net/isshanmarwah3" target="_blank" rel="noreferrer">Behance <ArrowUpRight size={15} /></a>
           <a href="https://isshan-marwah.itch.io" target="_blank" rel="noreferrer">Itch.io <ArrowUpRight size={15} /></a>
         </div>
