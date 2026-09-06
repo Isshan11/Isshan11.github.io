@@ -7,12 +7,22 @@ const systemProjects = [
 ];
 
 const visualProjects = [
-  { title: 'Space Harbor', type: 'Sci-fi environment', image: '/media/space-harbor.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/RKAVXO' },
-  { title: 'Control Room', type: 'Environment study', image: '/media/control-room.webp', className: '', href: 'https://isshan11.artstation.com/projects/rlay06' },
-  { title: 'Cryopod Room', type: 'Modular environment', image: '/media/cryopod-room.webp', className: '', href: 'https://isshan11.artstation.com/projects/L4AVr5' },
   { title: 'Storage Room', type: 'Sci-fi environment', image: '/media/storage-room.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lGAYRY' },
-  { title: 'Rock Character', type: 'Stylized character', image: '/media/rock-character.webp', className: '', href: 'https://isshan11.artstation.com/projects/WdmZYQ' },
-  { title: 'Blade Studies', type: 'Hard-surface modeling', image: '/media/sword.webp', className: '', href: 'https://isshan11.artstation.com/projects/K3AyDr' },
+  { title: 'Tactical Knife', type: 'Game-ready weapon prop', image: '/media/tactical-knife.webp', className: '', href: 'https://isshan11.artstation.com/projects/XJADoL' },
+  { title: 'Industrial Generator', type: 'Game-ready prop', image: '/media/industrial-generator.webp', className: '', href: 'https://isshan11.artstation.com/projects/EzA952' },
+  { title: 'Rock Golem', type: 'Game-ready character', image: '/media/rock-character.webp', className: '', href: 'https://isshan11.artstation.com/projects/WdmZYQ' },
+  { title: 'Spaceship Corridor', type: 'Sci-fi environment', image: '/media/spaceship-corridor.webp', className: '', href: 'https://isshan11.artstation.com/projects/dyAxRK' },
+  { title: 'Space Harbor & Docking Bay', type: 'Sci-fi environment', image: '/media/space-harbor.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/RKAVXO' },
+  { title: 'Hub Rooms', type: 'Sci-fi environment', image: '/media/hub-rooms.webp', className: '', href: 'https://isshan11.artstation.com/projects/nJAeD6' },
+  { title: 'Control Room', type: 'Sci-fi environment', image: '/media/control-room.webp', className: '', href: 'https://isshan11.artstation.com/projects/rlay06' },
+  { title: 'Cryopod Chamber', type: 'Sci-fi environment', image: '/media/cryopod-room.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/L4AVr5' },
+  { title: 'Final Cutscene & Intro Cinematic', type: 'Cinematic & animation', image: '/media/final-cutscene.jpg', className: '', href: 'https://isshan11.artstation.com/projects/98YnJL' },
+  { title: 'First-Person Astronaut Hands', type: 'First-person animation', image: '/media/astronaut-hands.webp', className: '', href: 'https://isshan11.artstation.com/projects/dyAmXw' },
+  { title: 'Flamethrower', type: 'Game-ready weapon prop', image: '/media/flamethrower.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lEDr9o' },
+  { title: 'Vector 9', type: 'Enemy robot character', image: '/media/vector-9.webp', className: '', href: 'https://isshan11.artstation.com/projects/GvANQd' },
+  { title: 'Fantasy Lamp', type: 'Game-ready prop', image: '/media/fantasy-lamp.webp', className: '', href: 'https://isshan11.artstation.com/projects/gRA5mK' },
+  { title: 'Stylized Heavy Sword', type: 'Game-ready weapon prop', image: '/media/sword.webp', className: '', href: 'https://isshan11.artstation.com/projects/K3AyDr' },
+  { title: 'Nailed Bat', type: 'Game-ready weapon prop', image: '/media/nailed-bat.webp', className: '', href: 'https://isshan11.artstation.com/projects/bgAJwE' },
 ];
 
 const moreGames = [
@@ -37,7 +47,7 @@ function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
 function ArtCard({ project, index }: { project: (typeof visualProjects)[number], index: number }) {
   return (
     <a className={`art-card ${project.className}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on ArtStation`}>
-      <img src={project.image} alt={`${project.title}, ${project.type} by Isshan Marwah`} />
+      <img src={project.image} alt={`${project.title}, ${project.type} by Isshan Marwah`} loading={index < 3 ? 'eager' : 'lazy'} decoding="async" />
       <div className="art-overlay">
         <span>{String(index + 1).padStart(2, '0')} / {project.type}</span>
         <h3>{project.title}</h3>
@@ -113,12 +123,12 @@ export default function Home() {
           <p>Environment composition, hard-surface modeling, UVs, texturing, animation, and engine-ready asset preparation.</p>
         </div>
         <div className="art-grid">
-          {visualProjects.slice(0, 4).map((project, index) => <ArtCard project={project} index={index} key={project.title} />)}
+          {visualProjects.slice(0, 3).map((project, index) => <ArtCard project={project} index={index} key={project.title} />)}
         </div>
         <details className="reveal-panel art-reveal">
           <summary><span>Show more 3D work</span><span className="summary-state" aria-hidden="true" /></summary>
           <div className="art-grid reveal-content">
-            {visualProjects.slice(4).map((project, index) => <ArtCard project={project} index={index + 4} key={project.title} />)}
+            {visualProjects.slice(3).map((project, index) => <ArtCard project={project} index={index + 3} key={project.title} />)}
           </div>
         </details>
       </section>
