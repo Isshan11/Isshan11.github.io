@@ -8,8 +8,8 @@ const systemProjects = [
 
 const visualProjects = [
   { title: 'Storage Room', type: 'Sci-fi environment', image: '/media/storage-room.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lGAYRY' },
-  { title: 'Tactical Knife', type: 'Game-ready weapon prop', image: '/media/tactical-knife.webp', className: '', href: 'https://isshan11.artstation.com/projects/XJADoL' },
-  { title: 'Industrial Generator', type: 'Game-ready prop', image: '/media/industrial-generator.webp', className: '', href: 'https://isshan11.artstation.com/projects/EzA952' },
+  { title: 'Tactical Knife - Hard Surface 3D Model | High & Low Poly', type: 'Game-ready weapon prop', image: '/media/tactical-knife.webp', className: '', href: 'https://isshan11.artstation.com/projects/XJADoL' },
+  { title: 'Industrial Generator – Hard Surface 3D Model', type: 'Game-ready prop', image: '/media/industrial-generator.webp', className: '', href: 'https://isshan11.artstation.com/projects/EzA952' },
   { title: 'Rock Golem', type: 'Game-ready character', image: '/media/rock-character.webp', className: '', href: 'https://isshan11.artstation.com/projects/WdmZYQ' },
   { title: 'Spaceship Corridor', type: 'Sci-fi environment', image: '/media/spaceship-corridor.webp', className: '', href: 'https://isshan11.artstation.com/projects/dyAxRK' },
   { title: 'Space Harbor & Docking Bay', type: 'Sci-fi environment', image: '/media/space-harbor.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/RKAVXO' },
@@ -20,9 +20,7 @@ const visualProjects = [
   { title: 'First-Person Astronaut Hands', type: 'First-person animation', image: '/media/astronaut-hands.webp', className: '', href: 'https://isshan11.artstation.com/projects/dyAmXw' },
   { title: 'Flamethrower', type: 'Game-ready weapon prop', image: '/media/flamethrower.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lEDr9o' },
   { title: 'Vector 9', type: 'Enemy robot character', image: '/media/vector-9.webp', className: '', href: 'https://isshan11.artstation.com/projects/GvANQd' },
-  { title: 'Fantasy Lamp', type: 'Game-ready prop', image: '/media/fantasy-lamp.webp', className: '', href: 'https://isshan11.artstation.com/projects/gRA5mK' },
-  { title: 'Stylized Heavy Sword', type: 'Game-ready weapon prop', image: '/media/sword.webp', className: '', href: 'https://isshan11.artstation.com/projects/K3AyDr' },
-  { title: 'Nailed Bat', type: 'Game-ready weapon prop', image: '/media/nailed-bat.webp', className: '', href: 'https://isshan11.artstation.com/projects/bgAJwE' },
+  { title: 'Fantasy Lamp - Hard Surface 3D Model', type: 'Game-ready prop', image: '/media/fantasy-lamp.webp', className: '', href: 'https://isshan11.artstation.com/projects/gRA5mK' },
 ];
 
 const moreGames = [
