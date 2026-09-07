@@ -1,4 +1,6 @@
-import { ArrowDownRight, ArrowUpRight, Boxes, Braces, Cpu, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Boxes, Cpu, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+
+import { VectorOfFearFeature } from '@/components/vector-of-fear-feature';
 
 const systemProjects = [
   { index: '01', title: 'FPS Combat & Advanced AI', eyebrow: 'Gameplay systems', description: 'A complete Unreal Engine 5 combat loop with C++ and Blueprints: movement, weapons, recoil, headshots, animation, effects, destruction, and cover-aware enemies driven by Behavior Trees and EQS.', tags: ['UE5', 'C++', 'Blueprints', 'Behavior Trees', 'EQS'], accent: 'cyan' },
@@ -138,48 +140,8 @@ export default function Home() {
             <p>Gameplay logic, models, animation, UI, and integration—projects where every discipline connects.</p>
             <a className="text-link" href="https://isshan-marwah.itch.io" target="_blank" rel="noreferrer">Visit my Itch.io <ArrowUpRight size={16} /></a>
           </div>
-          <a className="game-feature" href="https://seraphstudios.itch.io/vector-of-fear" target="_blank" rel="noreferrer" aria-label="View Vector of Fear on Itch.io">
-            <div className="game-badge">Ubisoft’s Choice · 2nd Year</div><p className="project-eyebrow">Unity / C# / Blender / Substance</p><h3>Vector of Fear</h3>
-            <p>A survival-horror game set aboard a damaged vessel drifting through deep space. As the ship&apos;s engineer, the player must repair the vessel, escape lockdown, and survive the threat onboard.</p>
-            <div className="game-lines" aria-hidden="true"><Braces /><span>DESIGN</span><span>BUILD</span><span>PLAY ↗</span></div>
-          </a>
+          <VectorOfFearFeature />
         </div>
-        <details className="reveal-panel vector-reveal">
-          <summary><span>View my contribution — Vector of Fear</span><span className="summary-state" aria-hidden="true" /></summary>
-          <div className="vector-case-study reveal-content">
-            <div className="vector-overview">
-              <div>
-                <p className="project-eyebrow">About the game</p>
-                <p>Vector of Fear is a Unity sci-fi survival-horror game about an engineer trapped aboard a damaged vessel in lockdown. It was featured at Level Up Student Showcase 2026 and selected as the 2nd-Year Ubisoft’s Choice at Ontario Tech University’s GameCon.</p>
-              </div>
-              <div>
-                <p className="project-eyebrow">My role</p>
-                <h3>3D Art, Animation &amp; Technical Implementation</h3>
-                <p>I handled the complete visual pipeline—from models, textures, and animation to Unity integration, real-time effects, audio synchronization, and supporting code.</p>
-              </div>
-            </div>
-            <div className="contribution-grid">
-              <article className="contribution-card">
-                <span>01</span><h4>Asset Creation</h4>
-                <p>Created all models, textures, and animations for the game, including characters, props, environments, first-person assets, and the Blender-built space sky map.</p>
-              </article>
-              <article className="contribution-card">
-                <span>02</span><h4>Unity Implementation</h4>
-                <p>Integrated the assets in Unity and set up animation systems, Timeline sequences, triggers, cutscenes, sound cues, and event timing to bring each scene together.</p>
-              </article>
-              <article className="contribution-card">
-                <span>03</span><h4>Shaders, VFX &amp; Code</h4>
-                <p>Built Shader Graph and VFX Graph effects for the black hole, spaceship thrusters, weapons, and particles, then adjusted C# code to synchronize triggers, animation, sound, and effects.</p>
-              </article>
-            </div>
-            <div className="case-study-footer">
-              <ul className="case-study-tools" aria-label="Vector of Fear tools">
-                {['Unity', 'C#', 'Blender', 'Substance 3D Painter', 'Shader Graph', 'VFX Graph', 'Timeline'].map((tool) => <li key={tool}>{tool}</li>)}
-              </ul>
-              <a className="case-study-link" href="https://seraphstudios.itch.io/vector-of-fear" target="_blank" rel="noreferrer">View on Itch.io <ArrowUpRight size={16} /></a>
-            </div>
-          </div>
-        </details>
         <details className="reveal-panel games-reveal">
           <summary><span>Show more games</span><span className="summary-state" aria-hidden="true" /></summary>
           <div className="more-games-grid reveal-content">
