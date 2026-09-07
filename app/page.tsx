@@ -131,15 +131,61 @@ export default function Home() {
         <GamesShowcase />
       </section>
 
-      <section className="section about-section" id="experience">
+      <section className="section about-section experience-section" id="experience">
         <div className="about-statement"><p className="kicker"><span /> Experience</p><h2>Learning by building<br />real production work.</h2></div>
         <div className="about-body">
-          <p>During my Game Art internship at Lakshya Digital, I independently built an Unreal Engine FPS prototype, advanced cover-based AI, a procedural ecosystem generator, and editor-side asset utilities.</p>
-          <p>At Ontario Tech University, I continue developing games, 3D environments, and technical workflows across team and independent projects.</p>
+          <p>My professional experience spans Unreal Engine technical art, gameplay systems, procedural tools, and QA automation.</p>
           <div className="contact-facts">
             <span className="location"><MapPin size={17} /> Ontario, Canada</span>
             <a className="location" href="tel:+19052437529"><Phone size={17} /> +1 905 243 7529</a>
           </div>
+        </div>
+
+        <div className="experience-list">
+          <article className="experience-card experience-card-featured">
+            <aside className="experience-card-rail">
+              <span className="experience-index">01 / Featured</span>
+              <div>
+                <span className="experience-duration">May 2026 - Aug 2026</span>
+                <span className="experience-location">India</span>
+              </div>
+            </aside>
+            <div className="experience-card-body">
+              <p className="experience-company">Lakshya Digital</p>
+              <h3>Game Art Intern - Unreal Engine / Technical Art</h3>
+              <p className="experience-summary">Independently developed production-style Unreal Engine 5 prototypes and artist-facing tools across gameplay, AI, PCG, animation, effects, destruction, and editor workflows.</p>
+              <ol className="experience-highlights">
+                <li><strong>FPS Gameplay</strong><span>Built the C++ and Blueprint combat loop: movement, sprinting, crouching, jumping, aiming and FOV, weapon switching, line-trace shooting, recoil, headshots, and combat feedback.</span></li>
+                <li><strong>Advanced Enemy AI</strong><span>Created Behavior Tree and EQS enemies that detect and pressure the player, query nearby cover, reposition, peek, and shoot based on visibility and combat state.</span></li>
+                <li><strong>Procedural Ecosystem</strong><span>Developed an artist-controlled PCG tool for trees, grass, and rocks with terrain projection, slope and height rules, weighted variation, density controls, paint masks, and spline exclusions.</span></li>
+                <li><strong>Integration &amp; Editor Tools</strong><span>Integrated retargeted animation, IK, VFX, and Chaos destruction, then built Blueprint and C++ tools for asset scanning, cleanup, empty-folder detection, and optimization preparation.</span></li>
+              </ol>
+              <ul className="tag-list experience-tags"><li>Unreal Engine 5</li><li>C++</li><li>Blueprints</li><li>Behavior Trees</li><li>EQS</li><li>PCG</li><li>Editor Tools</li></ul>
+            </div>
+          </article>
+
+          <details className="reveal-panel experience-reveal">
+            <summary><span>Show Virgin Mobile experience</span><span className="summary-state" aria-hidden="true" /></summary>
+            <article className="experience-card experience-card-secondary reveal-content">
+              <aside className="experience-card-rail">
+                <span className="experience-index">02</span>
+                <div>
+                  <span className="experience-duration">3-month internship</span>
+                  <span className="experience-location">Dubai, UAE</span>
+                </div>
+              </aside>
+              <div className="experience-card-body">
+                <p className="experience-company">Virgin Mobile UAE</p>
+                <h3>Technical / Automation Intern</h3>
+                <p className="experience-summary">Worked across website quality assurance, test automation, API validation, and technical communication.</p>
+                <ol className="experience-highlights experience-highlights-compact">
+                  <li><strong>QA Automation</strong><span>Built Python and Selenium automation for broken images, missing content, and page-load issues, while performing UI automation and API validation.</span></li>
+                  <li><strong>Workflow &amp; Reporting</strong><span>Used GitLab workflows and prepared technical reports and presentations to communicate issues, automation findings, and test results.</span></li>
+                </ol>
+                <ul className="tag-list experience-tags"><li>Python</li><li>Selenium</li><li>QA Automation</li><li>API Validation</li><li>GitLab</li></ul>
+              </div>
+            </article>
+          </details>
         </div>
       </section>
 
