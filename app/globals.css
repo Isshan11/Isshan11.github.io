@@ -108,8 +108,9 @@ footer { display: grid; grid-template-columns: 1fr auto; gap: 50px; padding: cla
 .contribution-trigger { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; min-height: 50px; padding: 0 0 0 16px; border: 1px solid rgba(87,231,227,.48); background: rgba(87,231,227,.06); color: var(--cyan); cursor: pointer; font: 700 10px/1 var(--font-geist-mono); letter-spacing: .13em; text-transform: uppercase; transition: background .22s ease, border-color .22s ease, color .22s ease; }
 .contribution-trigger:hover, .contribution-trigger:focus-visible { border-color: var(--cyan); background: var(--cyan); color: #081012; outline: none; }
 .contribution-trigger-icon { display: grid; place-items: center; align-self: stretch; width: 50px; border-left: 1px solid currentColor; }
-[data-slot="dialog-overlay"] { background: rgba(3,5,7,.84); backdrop-filter: blur(10px); }
-.contribution-dialog { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 0; width: min(1120px, calc(100vw - 40px)); max-width: min(1120px, calc(100vw - 40px)); max-height: calc(100dvh - 40px); padding: 0; overflow: hidden; border: 1px solid rgba(184,255,50,.48); border-radius: 0; background: #0c0f12; color: var(--foreground); box-shadow: 24px 24px 0 rgba(184,255,50,.16); }
+.contribution-dialog { position: fixed; inset: 0; grid-template-rows: auto minmax(0, 1fr); gap: 0; width: min(1120px, calc(100vw - 40px)); max-width: min(1120px, calc(100vw - 40px)); max-height: calc(100dvh - 40px); margin: auto; padding: 0; overflow: hidden; border: 1px solid rgba(184,255,50,.48); border-radius: 0; background: #0c0f12; color: var(--foreground); box-shadow: 24px 24px 0 rgba(184,255,50,.16); }
+.contribution-dialog[open] { display: grid; }
+.contribution-dialog::backdrop { background: rgba(3,5,7,.84); backdrop-filter: blur(10px); }
 .contribution-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 22px 26px; border-bottom: 1px solid var(--border); background: #111519; }
 .contribution-dialog-header .project-eyebrow { margin-bottom: 7px; color: var(--cyan); }
 .contribution-dialog-title { font-size: clamp(1.45rem, 2.5vw, 2.4rem); line-height: 1; letter-spacing: -.04em; }

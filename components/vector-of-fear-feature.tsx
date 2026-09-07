@@ -1,42 +1,42 @@
 'use client';
 
-import { ArrowUpRight, Plus, X } from 'lucide-react';
-
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
-
 const tools = ['Unity', 'C#', 'Blender', 'Substance 3D Painter', 'Shader Graph', 'VFX Graph', 'Timeline'];
 
 export function VectorOfFearFeature() {
+  function openContribution() {
+    const dialog = document.getElementById('vector-contribution-dialog');
+    if (dialog instanceof HTMLDialogElement) dialog.showModal();
+  }
+
+  function restoreTriggerFocus() {
+    document.getElementById('vector-contribution-trigger')?.focus();
+  }
+
   return (
-    <Dialog>
+    <>
       <article className="game-feature">
         <div className="game-badge">Ubisoft’s Choice · 2nd Year</div>
         <p className="project-eyebrow">Unity / C# / Blender / Substance</p>
         <h3>Vector of Fear</h3>
         <p>A survival-horror game set aboard a damaged vessel drifting through deep space. As the ship&apos;s engineer, the player must repair the vessel, escape lockdown, and survive the threat onboard.</p>
         <div className="game-feature-action">
-          <DialogTrigger className="contribution-trigger" type="button">
+          <button id="vector-contribution-trigger" className="contribution-trigger" type="button" aria-haspopup="dialog" onClick={openContribution}>
             <span>Show contribution</span>
-            <span className="contribution-trigger-icon" aria-hidden="true"><Plus size={17} /></span>
-          </DialogTrigger>
+            <span className="contribution-trigger-icon" aria-hidden="true">+</span>
+          </button>
         </div>
       </article>
 
-      <DialogContent className="contribution-dialog" showCloseButton={false}>
+      <dialog id="vector-contribution-dialog" className="contribution-dialog" aria-labelledby="vector-contribution-title" aria-describedby="vector-contribution-description" onClose={restoreTriggerFocus}>
         <div className="contribution-dialog-header">
           <div>
             <p className="project-eyebrow">Game contribution / Vector of Fear</p>
-            <DialogTitle className="contribution-dialog-title">What I worked on</DialogTitle>
-            <DialogDescription className="sr-only">Isshan Marwah&apos;s art, animation, Unity, visual effects, and code contributions to Vector of Fear.</DialogDescription>
+            <h2 id="vector-contribution-title" className="contribution-dialog-title">What I worked on</h2>
+            <p id="vector-contribution-description" className="sr-only">Isshan Marwah&apos;s art, animation, Unity, visual effects, and code contributions to Vector of Fear.</p>
           </div>
-          <DialogClose className="dialog-close-button" type="button" aria-label="Close contribution window"><X size={19} /></DialogClose>
+          <form method="dialog">
+            <button className="dialog-close-button" type="submit" aria-label="Close contribution window">×</button>
+          </form>
         </div>
 
         <div className="contribution-dialog-scroll">
@@ -70,11 +70,11 @@ export function VectorOfFearFeature() {
               <ul className="case-study-tools" aria-label="Vector of Fear tools">
                 {tools.map((tool) => <li key={tool}>{tool}</li>)}
               </ul>
-              <a className="case-study-link" href="https://seraphstudios.itch.io/vector-of-fear" target="_blank" rel="noreferrer">View on Itch.io <ArrowUpRight size={16} /></a>
+              <a className="case-study-link" href="https://seraphstudios.itch.io/vector-of-fear" target="_blank" rel="noreferrer">View on Itch.io <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </dialog>
+    </>
   );
 }
