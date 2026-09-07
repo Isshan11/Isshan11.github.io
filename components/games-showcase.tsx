@@ -7,9 +7,8 @@ type Contribution = {
 
 type Game = {
   slug: string;
-  order: string;
   title: string;
-  badge: string;
+  badges?: string[];
   eyebrow: string;
   description: string;
   about: string;
@@ -23,9 +22,8 @@ type Game = {
 const games: Game[] = [
   {
     slug: 'vector-of-fear',
-    order: '01',
     title: 'Vector of Fear',
-    badge: 'Ubisoft’s Choice · 2nd Year',
+    badges: ['Ubisoft’s Choice — 2nd Year', 'Level Up Student Showcase 2026'],
     eyebrow: 'Unity / C# / Blender / Substance',
     description: 'A survival-horror game set aboard a damaged vessel drifting through deep space, where the ship’s engineer must repair the vessel, escape lockdown, and survive the threat onboard.',
     about: 'Vector of Fear is a Unity sci-fi survival-horror game about an engineer trapped aboard a damaged vessel in lockdown. It was featured at Level Up Student Showcase 2026 and selected as the 2nd-Year Ubisoft’s Choice at Ontario Tech University’s GameCon.',
@@ -41,9 +39,7 @@ const games: Game[] = [
   },
   {
     slug: 'end-of-the-stickin-world',
-    order: '02',
     title: "End of the Stickin' World",
-    badge: 'First-Year Capstone',
     eyebrow: 'Action / Fighting / Side-scroller',
     description: 'Play as Twiggy, an agile warrior who masters multiple weapons and fights rival clans and assassins across neon cityscapes and ancient, war-torn arenas.',
     about: 'A first-year capstone centered on Twiggy, a fast and deadly warrior fighting rival clans and assassins across neon-lit cityscapes and ancient battlegrounds.',
@@ -59,9 +55,7 @@ const games: Game[] = [
   },
   {
     slug: 'top-down-killer',
-    order: '03',
     title: 'Top Down Killer',
-    badge: 'Winter Programming Project',
     eyebrow: 'Action / Stealth / Top-down',
     description: 'A top-down assassin game focused on navigating levels, eliminating targets, and avoiding detection through strategy, timing, and stealth.',
     about: 'A winter programming project inspired by mobile stealth games, with a skilled assassin moving through levels, eliminating targets, and avoiding detection.',
@@ -77,9 +71,7 @@ const games: Game[] = [
   },
   {
     slug: 'after-hour',
-    order: '04',
     title: 'After Hour',
-    badge: 'One-Day Game',
     eyebrow: 'Unity / Narrative / HTML5',
     description: 'Alex returns to his old office, where three objects reveal fragments of a past relationship. Each choice confronts or dismisses his guilt, leading to one of three endings.',
     about: 'A short narrative game about Alex returning to an old office. Three key objects reveal pieces of a past relationship, and the player’s choices determine one of three final endings.',
@@ -95,9 +87,7 @@ const games: Game[] = [
   },
   {
     slug: 'rock-paper-scissor-scan',
-    order: '05',
     title: 'Rock Paper Scissor Scan! (Lab Equipment Game)',
-    badge: 'Prototype',
     eyebrow: 'Barcode Scanner / 3D Art / Game Assets',
     description: 'A prototype designed to use a barcode scanner to randomize the player’s character.',
     about: 'A lab-equipment game prototype built around using a barcode scanner to randomize the character the player receives.',
@@ -129,7 +119,11 @@ function GameCard({ game }: { game: Game }) {
   return (
     <>
       <article className="game-feature">
-        <div className="game-badge"><span>{game.order}</span>{game.badge}</div>
+        {game.badges && (
+          <div className="game-badges">
+            {game.badges.map((badge) => <div className="game-badge" key={badge}>{badge}</div>)}
+          </div>
+        )}
         <p className="project-eyebrow">{game.eyebrow}</p>
         <h3>{game.title}</h3>
         <p>{game.description}</p>
@@ -200,9 +194,12 @@ export function GamesShowcase() {
         </div>
         <GameCard game={games[0]} />
       </div>
-      <div className="game-card-grid">
-        {games.slice(1).map((game) => <GameCard game={game} key={game.slug} />)}
-      </div>
+      <details className="reveal-panel games-reveal">
+        <summary><span>Show more games</span><span className="summary-state" aria-hidden="true" /></summary>
+        <div className="game-card-grid reveal-content">
+          {games.slice(1).map((game) => <GameCard game={game} key={game.slug} />)}
+        </div>
+      </details>
     </>
   );
 }
