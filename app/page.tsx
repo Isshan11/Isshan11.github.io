@@ -1,6 +1,6 @@
 import { ArrowDownRight, ArrowUpRight, Boxes, Cpu, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 
-import { VectorOfFearFeature } from '@/components/vector-of-fear-feature';
+import { GamesShowcase } from '@/components/games-showcase';
 
 const systemProjects = [
   { index: '01', title: 'FPS Combat & Advanced AI', eyebrow: 'Gameplay systems', description: 'A complete Unreal Engine 5 combat loop with C++ and Blueprints: movement, weapons, recoil, headshots, animation, effects, destruction, and cover-aware enemies driven by Behavior Trees and EQS.', tags: ['UE5', 'C++', 'Blueprints', 'Behavior Trees', 'EQS'], accent: 'cyan' },
@@ -23,12 +23,6 @@ const visualProjects = [
   { title: 'Flamethrower', type: 'Game-ready weapon prop', image: '/media/flamethrower.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lEDr9o' },
   { title: 'Vector 9', type: 'Enemy robot character', image: '/media/vector-9.webp', className: '', href: 'https://isshan11.artstation.com/projects/GvANQd' },
   { title: 'Fantasy Lamp - Hard Surface 3D Model', type: 'Game-ready prop', image: '/media/fantasy-lamp.webp', className: '', href: 'https://isshan11.artstation.com/projects/gRA5mK' },
-];
-
-const moreGames = [
-  { title: "End of the Stickin' World", type: '2D side-scroller', description: 'An action-packed Unity side-scroller with weapon choice and varied enemies.', href: 'https://isshan-marwah.itch.io', number: '01' },
-  { title: 'Rise from Below', type: 'Unity / HTML5', description: 'A sci-fi climbing adventure about escaping a collapsing alien planet with a failing jetpack.', href: 'https://isshan-marwah.itch.io/rise-from-below', number: '02' },
-  { title: 'Make It to Beat It', type: 'Game prototype', description: 'Gather the right potion ingredients, prepare for the fight, and defeat the final boss.', href: 'https://isshan-marwah.itch.io/make-it-to-beat-it', number: '03' },
 ];
 
 function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
@@ -134,26 +128,7 @@ export default function Home() {
       </section>
 
       <section className="section games-section" id="games">
-        <div className="games-intro-grid">
-          <div className="games-copy">
-            <p className="kicker"><span /> Playable work</p><h2>Games across<br />the whole pipeline.</h2>
-            <p>Gameplay logic, models, animation, UI, and integration—projects where every discipline connects.</p>
-            <a className="text-link" href="https://isshan-marwah.itch.io" target="_blank" rel="noreferrer">Visit my Itch.io <ArrowUpRight size={16} /></a>
-          </div>
-          <VectorOfFearFeature />
-        </div>
-        <details className="reveal-panel games-reveal">
-          <summary><span>Show more games</span><span className="summary-state" aria-hidden="true" /></summary>
-          <div className="more-games-grid reveal-content">
-            {moreGames.map((game) => (
-              <a className="mini-game-card" href={game.href} target="_blank" rel="noreferrer" key={game.title}>
-                <div className="mini-game-top"><span>{game.number}</span><ArrowUpRight size={18} /></div>
-                <p className="project-eyebrow">{game.type}</p><h3>{game.title}</h3><p>{game.description}</p>
-                <span className="mini-game-link">Play or view on Itch.io</span>
-              </a>
-            ))}
-          </div>
-        </details>
+        <GamesShowcase />
       </section>
 
       <section className="section about-section" id="experience">
