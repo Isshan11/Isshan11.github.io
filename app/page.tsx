@@ -1,11 +1,12 @@
-import { ArrowDownRight, ArrowUpRight, Cpu, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Cpu, Gamepad2, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 
 import { GamesShowcase } from '@/components/games-showcase';
 
 const systemProjects = [
   { index: '01', title: 'FPS Combat & Advanced AI', eyebrow: 'Gameplay systems', description: 'A complete Unreal Engine 5 combat loop with C++ and Blueprints: movement, weapons, recoil, headshots, animation, effects, destruction, and cover-aware enemies driven by Behavior Trees and EQS.', tags: ['UE5', 'C++', 'Blueprints', 'Behavior Trees', 'EQS'], accent: 'cyan' },
   { index: '02', title: 'Procedural Ecosystem Generator', eyebrow: 'Artist-facing PCG tool', description: 'A configurable biome system for trees, grass, and rocks with terrain projection, slope and height rules, weighted variation, seeds, paint masks, spline exclusions, and reusable PCG subgraphs.', tags: ['UE 5.6.1', 'PCG', 'Blueprint', 'Procedural workflows'], accent: 'lime' },
-  { index: '03', title: 'Selenium UI Automation Suite', eyebrow: 'QA automation / Python', description: 'An end-to-end Selenium framework covering 21 customer journeys, with reusable page objects, shared UI validation, timing and screenshot evidence, CSV reporting, and optional Jira Xray integration.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio' },
+  { index: '03', title: 'Selenium UI Automation Suite', eyebrow: 'Virgin Mobile UAE / Website QA', description: 'Built for Virgin Mobile UAE to automate page-by-page website checks across 21 customer journeys. Implemented the Python/Selenium suite, reusable page objects, content and navigation validation, load-time tracking, CSV reports, screenshot evidence, and Jira Xray reporting.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio', platform: 'GitHub' },
+  { index: '04', title: "End of the Stickin' World", eyebrow: 'Gameplay programming & implementation', description: 'Handled the complete programming side of the game, writing its gameplay code and systems and implementing the art, sound, and levels. Connected these elements into the finished playable experience.', tags: ['Gameplay Programming', 'Systems', 'Art Integration', 'Audio Integration', 'Level Implementation'], accent: 'cyan', href: 'https://takospec.itch.io/end-of-the-stickin-world', platform: 'itch.io' },
 ];
 
 const visualProjects = [
@@ -29,7 +30,7 @@ function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
   const content = (
     <>
       <div className="system-index">{project.index}</div>
-      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <Cpu /> : project.index === '02' ? <Sparkles /> : <GitBranch />}</div>
+      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <Cpu /> : project.index === '02' ? <Sparkles /> : project.index === '03' ? <GitBranch /> : <Gamepad2 />}</div>
       <div className="system-content">
         <p className="project-eyebrow">{project.eyebrow}</p><h3>{project.title}</h3><p>{project.description}</p>
         <ul className="tag-list" aria-label={`${project.title} technologies`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
@@ -38,7 +39,7 @@ function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
   );
 
   if (project.href) {
-    return <a className={`system-card accent-${project.accent}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>{content}</a>;
+    return <a className={`system-card accent-${project.accent}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on ${project.platform}`}>{content}</a>;
   }
 
   return <article className={`system-card accent-${project.accent}`}>{content}</article>;
@@ -113,7 +114,7 @@ export default function Home() {
         </div>
         <details className="reveal-panel">
           <summary><span>Show more tools &amp; systems</span><span className="summary-state" aria-hidden="true" /></summary>
-          <div className="system-list reveal-content"><SystemCard project={systemProjects[2]} /></div>
+          <div className="system-list reveal-content">{systemProjects.slice(2).map((project) => <SystemCard project={project} key={project.index} />)}</div>
         </details>
       </section>
 
