@@ -1,11 +1,11 @@
-import { ArrowDownRight, ArrowUpRight, Boxes, Cpu, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Cpu, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 
 import { GamesShowcase } from '@/components/games-showcase';
 
 const systemProjects = [
   { index: '01', title: 'FPS Combat & Advanced AI', eyebrow: 'Gameplay systems', description: 'A complete Unreal Engine 5 combat loop with C++ and Blueprints: movement, weapons, recoil, headshots, animation, effects, destruction, and cover-aware enemies driven by Behavior Trees and EQS.', tags: ['UE5', 'C++', 'Blueprints', 'Behavior Trees', 'EQS'], accent: 'cyan' },
   { index: '02', title: 'Procedural Ecosystem Generator', eyebrow: 'Artist-facing PCG tool', description: 'A configurable biome system for trees, grass, and rocks with terrain projection, slope and height rules, weighted variation, seeds, paint masks, spline exclusions, and reusable PCG subgraphs.', tags: ['UE 5.6.1', 'PCG', 'Blueprint', 'Procedural workflows'], accent: 'lime' },
-  { index: '03', title: 'Asset Cleaner & Optimization Tools', eyebrow: 'Editor tooling', description: 'Production-oriented Unreal Editor utilities that scan folders, surface unused assets, clean selections, detect empty folders, and reduce repetitive preparation work around LODs, Nanite, and collision.', tags: ['Unreal Editor', 'C++', 'Editor Utility', 'Pipeline'], accent: 'amber' },
+  { index: '03', title: 'Selenium UI Automation Suite', eyebrow: 'QA automation / Python', description: 'An end-to-end Selenium framework covering 21 customer journeys, with reusable page objects, shared UI validation, timing and screenshot evidence, CSV reporting, and optional Jira Xray integration.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio' },
 ];
 
 const visualProjects = [
@@ -26,16 +26,22 @@ const visualProjects = [
 ];
 
 function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
-  return (
-    <article className={`system-card accent-${project.accent}`}>
+  const content = (
+    <>
       <div className="system-index">{project.index}</div>
-      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <Cpu /> : project.index === '02' ? <Sparkles /> : <Boxes />}</div>
+      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <Cpu /> : project.index === '02' ? <Sparkles /> : <GitBranch />}</div>
       <div className="system-content">
         <p className="project-eyebrow">{project.eyebrow}</p><h3>{project.title}</h3><p>{project.description}</p>
         <ul className="tag-list" aria-label={`${project.title} technologies`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
       </div>
-    </article>
+    </>
   );
+
+  if (project.href) {
+    return <a className={`system-card accent-${project.accent}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>{content}</a>;
+  }
+
+  return <article className={`system-card accent-${project.accent}`}>{content}</article>;
 }
 
 function ArtCard({ project, index }: { project: (typeof visualProjects)[number], index: number }) {

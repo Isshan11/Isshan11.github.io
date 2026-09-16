@@ -58,6 +58,7 @@ h1 em, footer h2 em { color: var(--lime); font-family: Georgia, serif; font-weig
 .system-list { border-top: 1px solid var(--border); }
 .system-card { position: relative; display: grid; grid-template-columns: 72px 78px 1fr; gap: 28px; padding: 44px 18px; border-bottom: 1px solid var(--border); overflow: hidden; transition: background .3s ease; }
 .system-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 3px; opacity: 0; transition: opacity .3s ease; }.system-card:hover { background: rgba(255,255,255,.025); }.system-card:hover::before { opacity: 1; }
+.system-card[href] { cursor: pointer; }.system-card[href]:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
 .accent-cyan::before { background: var(--cyan); }.accent-lime::before { background: var(--lime); }.accent-amber::before { background: var(--amber); }
 .system-index { color: #737983; font: 500 11px/1 var(--font-geist-mono); padding-top: 8px; }.system-icon { display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid var(--border); color: var(--cyan); }.accent-lime .system-icon { color: var(--lime); }.accent-amber .system-icon { color: var(--amber); }.system-icon svg { width: 23px; }
 .project-eyebrow { margin-bottom: 8px; color: var(--muted); font: 600 10px/1.2 var(--font-geist-mono); letter-spacing: .12em; text-transform: uppercase; }
