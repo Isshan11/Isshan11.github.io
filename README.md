@@ -4,7 +4,7 @@ Portfolio website for Isshan Marwah, a Technical Artist and Game Developer worki
 
 ## Live portfolio
 
-[isshan-marwah-portfolio.ishum1106.chatgpt.site](https://isshan-marwah-portfolio.ishum1106.chatgpt.site)
+[isshan11.github.io](https://isshan11.github.io)
 
 ## Featured work
 
