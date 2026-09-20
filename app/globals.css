@@ -149,6 +149,7 @@ footer { display: grid; grid-template-columns: 1fr auto; gap: 50px; padding: cla
 .contribution-dialog-scroll { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 .vector-case-study { padding: clamp(28px, 4vw, 56px); background: #0c0f12; color: var(--foreground); }
 .vector-overview { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 6vw, 86px); padding-bottom: 42px; border-bottom: 1px solid var(--border); }
+.vector-overview-single { grid-template-columns: 1fr; }
 .vector-overview p:not(.project-eyebrow) { color: #adb3bc; line-height: 1.75; }
 .vector-overview h3 { max-width: 720px; margin: 10px 0 18px; color: var(--lime); font-size: clamp(2rem, 3.6vw, 4.5rem); line-height: 1; letter-spacing: -.05em; }
 .contribution-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 34px; background: var(--border); border: 1px solid var(--border); }

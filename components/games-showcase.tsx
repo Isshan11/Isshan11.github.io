@@ -12,8 +12,8 @@ type Game = {
   eyebrow: string;
   description: string;
   about: string;
-  role: string;
-  roleSummary: string;
+  role?: string;
+  roleSummary?: string;
   contributions: Contribution[];
   tags: string[];
   href: string;
@@ -51,7 +51,7 @@ const games: Game[] = [
       { title: 'Level Implementation', description: 'Integrated the level content and connected it with the game systems so the project played as one complete experience.' },
     ],
     tags: ['Programming', 'Gameplay Systems', 'Art Integration', 'Audio Integration', 'Level Integration'],
-    href: 'https://takospec.itch.io/end-of-the-stickin-world',
+    href: 'https://isshan-marwah.itch.io',
   },
   {
     slug: 'top-down-killer',
@@ -75,14 +75,12 @@ const games: Game[] = [
     eyebrow: 'Unity / Narrative / HTML5',
     description: 'Alex returns to his old office, where three objects reveal fragments of a past relationship. Each choice confronts or dismisses his guilt, leading to one of three endings.',
     about: 'A short narrative game about Alex returning to an old office. Three key objects reveal pieces of a past relationship, and the player’s choices determine one of three final endings.',
-    role: 'Developer & 3D Artist',
-    roleSummary: 'I challenged myself to create the entire game in one day, handling the programming, models, animation, sequencing, and Unity implementation.',
     contributions: [
       { title: 'Complete Programming', description: 'Coded the entire game, including its interactions, choice tracking, and three-ending logic.' },
       { title: 'Models & Visuals', description: 'Created all of the models used in the game and brought them into the Unity scene.' },
       { title: 'Animation & Sequencing', description: 'Created the animation and sequences directly in Unity, then assembled the full project within the one-day challenge.' },
     ],
-    tags: ['Unity', 'C#', '3D Modeling', 'Animation', 'Sequencing', 'Solo Development'],
+    tags: ['Unity', 'C#', '3D Modeling', 'Animation', 'Sequencing'],
     href: 'https://isshan-marwah.itch.io/after-hour',
   },
   {
@@ -149,16 +147,18 @@ function GameCard({ game }: { game: Game }) {
 
         <div className="contribution-dialog-scroll">
           <div className="vector-case-study">
-            <div className="vector-overview">
+            <div className={`vector-overview${game.role && game.roleSummary ? '' : ' vector-overview-single'}`}>
               <div>
                 <p className="project-eyebrow">About the game</p>
                 <p>{game.about}</p>
               </div>
-              <div>
-                <p className="project-eyebrow">My role</p>
-                <h3>{game.role}</h3>
-                <p>{game.roleSummary}</p>
-              </div>
+              {game.role && game.roleSummary && (
+                <div>
+                  <p className="project-eyebrow">My role</p>
+                  <h3>{game.role}</h3>
+                  <p>{game.roleSummary}</p>
+                </div>
+              )}
             </div>
             <div className="contribution-grid">
               {game.contributions.map((contribution, index) => (

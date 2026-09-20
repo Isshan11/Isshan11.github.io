@@ -1,12 +1,13 @@
-import { ArrowDownRight, ArrowUpRight, Cpu, Gamepad2, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Cpu, FolderSearch, Gamepad2, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 
 import { GamesShowcase } from '@/components/games-showcase';
 
 const systemProjects = [
-  { index: '01', title: 'FPS Combat & Advanced AI', eyebrow: 'Gameplay systems', description: 'A complete Unreal Engine 5 combat loop with C++ and Blueprints: movement, weapons, recoil, headshots, animation, effects, destruction, and cover-aware enemies driven by Behavior Trees and EQS. Created for Lakshya Digital; the project output cannot be shown publicly.', tags: ['UE5', 'C++', 'Blueprints', 'Behavior Trees', 'EQS'], accent: 'cyan' },
+  { index: '01', title: 'Unreal Engine Asset & Folder Cleanup Tools', eyebrow: 'Editor workflow tools', description: 'Unreal Engine tools that scan the Content Browser and current level to identify unused assets, and detect and delete empty folders and subfolders.', tags: ['UE5', 'C++', 'Blueprints', 'Editor Tools', 'Asset Cleanup'], accent: 'cyan' },
   { index: '02', title: 'Procedural Ecosystem Generator', eyebrow: 'Artist-facing PCG tool', description: 'A configurable biome system for trees, grass, and rocks with terrain projection, slope and height rules, weighted variation, seeds, paint masks, spline exclusions, and reusable PCG subgraphs.', tags: ['UE 5.6.1', 'PCG', 'Blueprint', 'Procedural workflows'], accent: 'lime' },
-  { index: '03', title: 'Selenium UI Automation Suite', eyebrow: 'Virgin Mobile UAE / Website QA', description: 'Built for Virgin Mobile UAE to automate page-by-page website checks across 21 customer journeys. Implemented the Python/Selenium suite, reusable page objects, content and navigation validation, load-time tracking, CSV reports, screenshot evidence, and Jira Xray reporting.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio', platform: 'GitHub' },
-  { index: '04', title: "End of the Stickin' World", eyebrow: 'Gameplay programming & implementation', description: 'Handled the complete programming side of the game, writing its gameplay code and systems and implementing the art, sound, and levels. Connected these elements into the finished playable experience.', tags: ['Gameplay Programming', 'Systems', 'Art Integration', 'Audio Integration', 'Level Implementation', 'C#', 'Unity'], accent: 'cyan', href: 'https://takospec.itch.io/end-of-the-stickin-world', platform: 'itch.io' },
+  { index: '03', title: 'FPS Combat & Advanced AI', eyebrow: 'Gameplay systems', description: 'A complete Unreal Engine 5 combat loop with C++ and Blueprints: movement, weapons, recoil, headshots, animation, effects, destruction, and cover-aware enemies driven by Behavior Trees and EQS. Created for Lakshya Digital; the project output cannot be shown publicly.', tags: ['UE5', 'C++', 'Blueprints', 'Behavior Trees', 'EQS'], accent: 'cyan' },
+  { index: '04', title: 'Selenium UI Automation Suite', eyebrow: 'Virgin Mobile UAE / Website QA', description: 'Built for Virgin Mobile UAE to automate page-by-page website checks across 21 customer journeys. Implemented the Python/Selenium suite, reusable page objects, content and navigation validation, load-time tracking, CSV reports, screenshot evidence, and Jira Xray reporting.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio', platform: 'GitHub' },
+  { index: '05', title: "End of the Stickin' World", eyebrow: 'Gameplay programming & implementation', description: 'Handled the complete programming side of the game, writing its gameplay code and systems and implementing the art, sound, and levels. Connected these elements into the finished playable experience.', tags: ['Gameplay Programming', 'Systems', 'Art Integration', 'Audio Integration', 'Level Implementation', 'C#', 'Unity'], accent: 'cyan', href: 'https://isshan-marwah.itch.io', platform: 'itch.io' },
 ];
 
 const visualProjects = [
@@ -30,7 +31,7 @@ function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
   const content = (
     <>
       <div className="system-index">{project.index}</div>
-      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <Cpu /> : project.index === '02' ? <Sparkles /> : project.index === '03' ? <GitBranch /> : <Gamepad2 />}</div>
+      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <FolderSearch /> : project.index === '02' ? <Sparkles /> : project.index === '03' ? <Cpu /> : project.index === '04' ? <GitBranch /> : <Gamepad2 />}</div>
       <div className="system-content">
         <p className="project-eyebrow">{project.eyebrow}</p><h3>{project.title}</h3><p>{project.description}</p>
         <ul className="tag-list" aria-label={`${project.title} technologies`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
@@ -84,6 +85,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button button-primary" href="#systems">See my work <ArrowDownRight size={17} /></a>
             <a className="button button-ghost" href="/Isshan-Marwah-Technical-Artist-Resume.pdf" target="_blank" rel="noreferrer">View résumé <ArrowUpRight size={17} /></a>
+            <a className="button button-ghost" href="https://www.artstation.com/isshan11" target="_blank" rel="noreferrer">View ArtStation <ArrowUpRight size={17} /></a>
           </div>
           <div className="hero-facts" aria-label="Portfolio highlights">
             <div><strong>UE5</strong><span>Systems &amp; PCG</span></div>
@@ -110,11 +112,11 @@ export default function Home() {
           <p>Production-minded systems that solve real problems while keeping the artist experience clear and flexible.</p>
         </div>
         <div className="system-list">
-          {systemProjects.slice(0, 2).map((project) => <SystemCard project={project} key={project.index} />)}
+          {systemProjects.slice(0, 3).map((project) => <SystemCard project={project} key={project.index} />)}
         </div>
         <details className="reveal-panel">
           <summary><span>Show more tools &amp; systems</span><span className="summary-state" aria-hidden="true" /></summary>
-          <div className="system-list reveal-content">{systemProjects.slice(2).map((project) => <SystemCard project={project} key={project.index} />)}</div>
+          <div className="system-list reveal-content">{systemProjects.slice(3).map((project) => <SystemCard project={project} key={project.index} />)}</div>
         </details>
       </section>
 
