@@ -75,7 +75,7 @@ const games: Game[] = [
     eyebrow: 'Unity / Narrative / HTML5',
     description: 'Alex returns to his old office, where three objects reveal fragments of a past relationship. Each choice confronts or dismisses his guilt, leading to one of three endings.',
     about: 'A short narrative game about Alex returning to an old office. Three key objects reveal pieces of a past relationship, and the player’s choices determine one of three final endings.',
-    role: 'Solo Developer & 3D Artist',
+    role: 'Developer & 3D Artist',
     roleSummary: 'I challenged myself to create the entire game in one day, handling the programming, models, animation, sequencing, and Unity implementation.',
     contributions: [
       { title: 'Complete Programming', description: 'Coded the entire game, including its interactions, choice tracking, and three-ending logic.' },
