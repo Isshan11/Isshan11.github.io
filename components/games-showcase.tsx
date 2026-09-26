@@ -53,52 +53,6 @@ const games: Game[] = [
     tags: ['Programming', 'Gameplay Systems', 'Art Integration', 'Audio Integration', 'Level Integration'],
     href: 'https://isshan-marwah.itch.io',
   },
-  {
-    slug: 'top-down-killer',
-    title: 'Top Down Killer',
-    eyebrow: 'Action / Stealth / Top-down',
-    description: 'A top-down assassin game focused on navigating levels, eliminating targets, and avoiding detection through strategy, timing, and stealth.',
-    about: 'A winter programming project inspired by mobile stealth games, with a skilled assassin moving through levels, eliminating targets, and avoiding detection.',
-    role: 'Programmer & Game Integration',
-    roleSummary: 'I coded the complete game and implemented its art, sound, and level content to turn the project into a cohesive playable experience.',
-    contributions: [
-      { title: 'Full Game Programming', description: 'Wrote all of the gameplay code and logic for the project.' },
-      { title: 'Content Integration', description: 'Implemented the game’s art and sound assets and connected them with the programmed systems.' },
-      { title: 'Level Assembly', description: 'Integrated the level content and made sure the gameplay, presentation, and pacing worked together.' },
-    ],
-    tags: ['Programming', 'Gameplay Logic', 'Art Integration', 'Audio Integration', 'Level Integration'],
-    href: 'https://takospec.itch.io/top-down-killer',
-  },
-  {
-    slug: 'after-hour',
-    title: 'After Hour',
-    eyebrow: 'Unity / Narrative / HTML5',
-    description: 'Alex returns to his old office, where three objects reveal fragments of a past relationship. Each choice confronts or dismisses his guilt, leading to one of three endings.',
-    about: 'A short narrative game about Alex returning to an old office. Three key objects reveal pieces of a past relationship, and the player’s choices determine one of three final endings.',
-    contributions: [
-      { title: 'Complete Programming', description: 'Coded the entire game, including its interactions, choice tracking, and three-ending logic.' },
-      { title: 'Models & Visuals', description: 'Created all of the models used in the game and brought them into the Unity scene.' },
-      { title: 'Animation & Sequencing', description: 'Created the animation and sequences directly in Unity, then assembled the full project within the one-day challenge.' },
-    ],
-    tags: ['Unity', 'C#', '3D Modeling', 'Animation', 'Sequencing'],
-    href: 'https://isshan-marwah.itch.io/after-hour',
-  },
-  {
-    slug: 'rock-paper-scissor-scan',
-    title: 'Rock Paper Scissor Scan! (Lab Equipment Game)',
-    eyebrow: 'Barcode Scanner / 3D Art / Game Assets',
-    description: 'A prototype designed to use a barcode scanner to randomize the player’s character.',
-    about: 'A lab-equipment game prototype built around using a barcode scanner to randomize the character the player receives.',
-    role: '3D Artist & Visual Asset Creator',
-    roleSummary: 'I handled the complete visual side of the project, creating all of the game art and models used in the prototype.',
-    contributions: [
-      { title: 'Complete Game Art', description: 'Created the full visual art package for the project.' },
-      { title: '3D Model Creation', description: 'Made all of the 3D models used throughout the game.' },
-      { title: 'Full Visual Ownership', description: 'Carried the visual work consistently from the individual models into the finished in-game presentation.' },
-    ],
-    tags: ['3D Art', 'Modeling', 'Game Assets', 'Visual Development'],
-    href: 'https://garlicgladiator.itch.io/rock-paper-scissor-scan-lab-equipment-game',
-  },
 ];
 
 function GameCard({ game }: { game: Game }) {
