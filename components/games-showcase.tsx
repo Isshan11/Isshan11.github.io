@@ -51,7 +51,7 @@ const games: Game[] = [
       { title: 'Level Implementation', description: 'Integrated the level content and connected it with the game systems so the project played as one complete experience.' },
     ],
     tags: ['Programming', 'Gameplay Systems', 'Art Integration', 'Audio Integration', 'Level Integration'],
-    href: 'https://isshan-marwah.itch.io',
+    href: 'https://takospec.itch.io/end-of-the-stickin-world',
   },
 ];
 
