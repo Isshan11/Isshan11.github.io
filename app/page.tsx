@@ -9,12 +9,14 @@ const systemProjects = [
 ];
 
 const skillGroups = [
-  { index: '01', title: 'Engines & Real-Time', tools: ['Unreal Engine 5.8', 'Unity 2D / 3D'] },
-  { index: '02', title: 'Programming', tools: ['C++', 'C#', 'Python', 'HTML / CSS'] },
-  { index: '03', title: 'Technical Tools', tools: ['Blueprints', 'PCG', 'Editor Utility Widgets', 'Editor Modules'] },
-  { index: '04', title: '3D & Texturing', tools: ['Blender', '3ds Max', 'Substance 3D Painter', 'Photoshop'] },
-  { index: '05', title: 'Automation & QA', tools: ['Selenium', 'API Validation', 'MySQL'] },
-  { index: '06', title: 'Workflow & Media', tools: ['Git / GitLab', 'Premiere Pro', 'After Effects'] },
+  {
+    title: 'Software & Platforms',
+    tools: ['Unreal Engine 5.8', 'Unity 2D / 3D', 'Blender', '3ds Max', 'Substance 3D Painter', 'Photoshop', 'Selenium', 'Git / GitLab', 'Premiere Pro', 'After Effects'],
+  },
+  {
+    title: 'Programming & Technical',
+    tools: ['C++', 'C#', 'Python', 'HTML / CSS', 'Blueprints', 'PCG', 'Editor Utility Widgets', 'Editor Modules', 'API Validation', 'MySQL'],
+  },
 ];
 
 const visualProjects = [
@@ -106,15 +108,11 @@ export default function Home() {
         <p>I learn best by <strong>building, testing ideas,</strong> and working through unfamiliar problems.</p>
       </section>
 
-      <section className="section skills-section" id="skills">
-        <div className="section-heading skills-heading">
-          <div><p className="kicker"><span /> Skills &amp; tools</p><h2>Skills I use<br />across my work.</h2></div>
-          <p>A concise overview of the tools and technologies I use across programming, automation, 3D production, and interactive projects.</p>
-        </div>
+      <section className="skills-section" id="skills">
+        <p className="kicker"><span /> Skills &amp; tools</p>
         <div className="skills-grid">
           {skillGroups.map((group) => (
-            <article className="skill-group" key={group.index}>
-              <span className="skill-index">{group.index}</span>
+            <article className="skill-group" key={group.title}>
               <h3>{group.title}</h3>
               <ul className="skill-tools" aria-label={`${group.title} skills`}>
                 {group.tools.map((tool) => <li key={tool}>{tool}</li>)}
