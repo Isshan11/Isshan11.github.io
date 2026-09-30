@@ -8,6 +8,15 @@ const systemProjects = [
   { index: '03', title: "End of the Stickin' World", eyebrow: 'Gameplay programming & implementation', description: 'Handled the complete programming side of the game, writing its gameplay code and systems and implementing the art, sound, and levels. Connected these elements into the finished playable experience.', tags: ['Gameplay Programming', 'Systems', 'Art Integration', 'Audio Integration', 'Level Implementation', 'C#', 'Unity'], accent: 'cyan', href: 'https://takospec.itch.io/end-of-the-stickin-world', platform: 'itch.io' },
 ];
 
+const skillGroups = [
+  { index: '01', title: 'Engines & Real-Time', tools: ['Unreal Engine 5.8', 'Unity 2D / 3D'] },
+  { index: '02', title: 'Programming', tools: ['C++', 'C#', 'Python', 'HTML / CSS'] },
+  { index: '03', title: 'Technical Tools', tools: ['Blueprints', 'PCG', 'Editor Utility Widgets', 'Editor Modules'] },
+  { index: '04', title: '3D & Texturing', tools: ['Blender', '3ds Max', 'Substance 3D Painter', 'Photoshop'] },
+  { index: '05', title: 'Automation & QA', tools: ['Selenium', 'API Validation', 'MySQL'] },
+  { index: '06', title: 'Workflow & Media', tools: ['Git / GitLab', 'Premiere Pro', 'After Effects'] },
+];
+
 const visualProjects = [
   { title: 'Storage Room', type: 'Sci-fi environment', image: '/media/storage-room.webp', className: 'wide', href: 'https://isshan11.artstation.com/projects/lGAYRY' },
   { title: 'Tactical Knife - Hard Surface 3D Model | High & Low Poly', type: 'Weapon prop', image: '/media/tactical-knife.webp', className: '', href: 'https://isshan11.artstation.com/projects/XJADoL' },
@@ -63,10 +72,10 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Isshan Marwah, home">
           <span className="brand-mark">IM</span>
-          <span className="brand-copy"><strong>Isshan Marwah</strong><small>Technical Artist</small></span>
+          <span className="brand-copy"><strong>Isshan Marwah</strong><small>Portfolio</small></span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#systems">Systems</a><a href="#art">3D Art</a><a href="#games">Games</a><a href="#experience">Experience</a>
+          <a href="#skills">Skills</a><a href="#systems">Systems</a><a href="#art">3D Art</a><a href="#games">Games</a><a href="#experience">Experience</a>
         </nav>
         <a className="header-contact" href="mailto:isshanmarwah@gmail.com">Let&apos;s talk <ArrowUpRight size={15} /></a>
       </header>
@@ -75,33 +84,44 @@ export default function Home() {
         <div className="hero-copy">
           <p className="kicker"><span /> Portfolio / 2026</p>
           <h1><span className="hero-first-name">Isshan</span><br /><em>Marwah.</em></h1>
-          <p className="hero-role">Technical Artist &amp; Game Developer</p>
           <div className="hero-about">
-            <p>I&apos;m a Game Development and Interactive Media student at Ontario Tech University, building toward technical art and technical game development roles.</p>
-            <p>I work across Unreal Engine gameplay systems, procedural tools, Unity games, and game-ready 3D art—bringing the technical and visual sides of production together.</p>
+            <p>I&apos;m Isshan Marwah, a Game Development and Interactive Media student at Ontario Tech University. My work spans programming, automation, 3D art, and interactive projects.</p>
+            <p>I enjoy learning new tools, improving workflows, and solving unfamiliar problems—especially when a project pushes me beyond what I already know.</p>
           </div>
           <div className="hero-actions">
             <a className="button button-primary" href="#systems">See my work <ArrowDownRight size={17} /></a>
             <a className="button button-ghost" href="/Isshan-Marwah-Technical-Artist-Resume.pdf" target="_blank" rel="noreferrer">View résumé <ArrowUpRight size={17} /></a>
             <a className="button button-ghost" href="https://www.artstation.com/isshan11" target="_blank" rel="noreferrer">View ArtStation <ArrowUpRight size={17} /></a>
           </div>
-          <div className="hero-facts" aria-label="Portfolio highlights">
-            <div><strong>UE5</strong><span>Systems &amp; PCG</span></div>
-            <div><strong>C++</strong><span>Tools &amp; gameplay</span></div>
-            <div><strong>3D</strong><span>Assets &amp; worlds</span></div>
-          </div>
         </div>
         <div className="hero-visual profile-visual">
           <img src="/media/isshan-marwah-niagara.png" alt="Portrait of Isshan Marwah at Niagara Falls" />
           <div className="hero-grid" aria-hidden="true" />
-          <div className="visual-label"><span>Game development &amp; interactive media</span><strong>Technical Artist</strong></div>
           <div className="visual-coordinates">ONTARIO / CANADA</div>
         </div>
       </section>
 
       <section className="manifesto" aria-label="Profile focus">
         <span className="section-number">00</span>
-        <p>I combine <strong>art and engineering</strong> to create responsive gameplay, reusable tools, and optimized real-time content.</p>
+        <p>I learn best by <strong>building, testing ideas,</strong> and working through unfamiliar problems.</p>
+      </section>
+
+      <section className="section skills-section" id="skills">
+        <div className="section-heading skills-heading">
+          <div><p className="kicker"><span /> Skills &amp; tools</p><h2>Skills I use<br />across my work.</h2></div>
+          <p>A concise overview of the tools and technologies I use across programming, automation, 3D production, and interactive projects.</p>
+        </div>
+        <div className="skills-grid">
+          {skillGroups.map((group) => (
+            <article className="skill-group" key={group.index}>
+              <span className="skill-index">{group.index}</span>
+              <h3>{group.title}</h3>
+              <ul className="skill-tools" aria-label={`${group.title} skills`}>
+                {group.tools.map((tool) => <li key={tool}>{tool}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section systems-section" id="systems">
@@ -139,9 +159,9 @@ export default function Home() {
       </section>
 
       <section className="section about-section experience-section" id="experience">
-        <div className="about-statement"><p className="kicker"><span /> Experience</p><h2>Learning by building<br />real production work.</h2></div>
+        <div className="about-statement"><p className="kicker"><span /> Experience</p><h2>Real projects.<br />Different roles.<br />Constant learning.</h2></div>
         <div className="about-body">
-          <p>My professional experience spans Unreal Engine technical art, gameplay systems, procedural tools, and QA automation.</p>
+          <p>My work has included programming, automation, 3D production, game development, technical tools, and QA—giving me practical experience across both creative and technical workflows.</p>
           <div className="contact-facts">
             <span className="location"><MapPin size={17} /> Ontario, Canada</span>
             <a className="location" href="tel:+19052437529"><Phone size={17} /> +1 905 243 7529</a>
@@ -199,15 +219,14 @@ export default function Home() {
       </section>
 
       <footer>
-        <div><p className="kicker"><span /> Available for opportunities</p><h2>Let&apos;s build something<br /><em>worth playing.</em></h2></div>
+        <div><p className="kicker"><span /> Available for opportunities</p><h2>Let&apos;s start<br /><em>a conversation.</em></h2></div>
         <div className="footer-links">
           <a href="mailto:isshanmarwah@gmail.com"><Mail size={17} /> Email me</a>
           <a href="tel:+19052437529"><Phone size={16} /> +1 905 243 7529</a>
           <a href="https://www.artstation.com/isshan11" target="_blank" rel="noreferrer">ArtStation <ArrowUpRight size={15} /></a>
-          <a href="https://www.behance.net/isshanmarwah3" target="_blank" rel="noreferrer">Behance <ArrowUpRight size={15} /></a>
           <a href="https://isshan-marwah.itch.io" target="_blank" rel="noreferrer">Itch.io <ArrowUpRight size={15} /></a>
         </div>
-        <div className="footer-meta"><span>© 2026 Isshan Marwah</span><span>Technical Art / Game Development</span></div>
+        <div className="footer-meta"><span>© 2026 Isshan Marwah</span><span>Programming / Automation / 3D Art / Interactive Work</span></div>
       </footer>
     </main>
   );

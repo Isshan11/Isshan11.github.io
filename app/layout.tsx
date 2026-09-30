@@ -7,22 +7,22 @@ const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://isshan11.github.io'),
-  title: 'Isshan Marwah — Technical Artist & Game Developer',
-  description: 'Technical artist and game developer building Unreal Engine gameplay systems, procedural tools, and game-ready 3D worlds.',
+  title: 'Isshan Marwah — Portfolio',
+  description: 'Portfolio of Isshan Marwah, an Ontario Tech University student working across programming, automation, 3D art, interactive projects, and technical tools.',
   openGraph: {
-    title: 'Isshan Marwah — Technical Artist & Game Developer',
-    description: 'Unreal Engine gameplay systems, procedural tools, and game-ready 3D worlds.',
+    title: 'Isshan Marwah — Portfolio',
+    description: 'Programming, automation, 3D art, interactive projects, and technical tools.',
     images: [{
       url: '/og.png',
       width: 1200,
       height: 630,
-      alt: 'Isshan Marwah — Technical Art • Game Development',
+      alt: 'Isshan Marwah — Creative and Technical Portfolio',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Isshan Marwah — Technical Artist & Game Developer',
-    description: 'Unreal Engine gameplay systems, procedural tools, and game-ready 3D worlds.',
+    title: 'Isshan Marwah — Portfolio',
+    description: 'Programming, automation, 3D art, interactive projects, and technical tools.',
     images: ['/og.png'],
   },
 };
