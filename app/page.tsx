@@ -1,11 +1,12 @@
-import { ArrowDownRight, ArrowUpRight, Gamepad2, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, FolderSearch, Gamepad2, GitBranch, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 
 import { GamesShowcase } from '@/components/games-showcase';
 
 const systemProjects = [
-  { index: '01', title: 'Procedural Ecosystem Generator', eyebrow: 'Artist-facing PCG tool', description: 'A configurable biome system for trees, grass, and rocks with terrain projection, slope and height rules, weighted variation, seeds, paint masks, spline exclusions, and reusable PCG subgraphs.', tags: ['UE 5.6.1', 'PCG', 'Blueprint', 'Procedural workflows'], accent: 'lime', href: 'https://www.artstation.com/artwork/AoZQXW', platform: 'ArtStation' },
-  { index: '02', title: 'Selenium UI Automation Suite', eyebrow: 'Virgin Mobile UAE / Website QA', description: 'Built for Virgin Mobile UAE to automate page-by-page website checks across 21 customer journeys. Implemented the Python/Selenium suite, reusable page objects, content and navigation validation, load-time tracking, CSV reports, screenshot evidence, and Jira Xray reporting.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio', platform: 'GitHub' },
-  { index: '03', title: "End of the Stickin' World", eyebrow: 'Gameplay programming & implementation', description: 'Handled the complete programming side of the game, writing its gameplay code and systems and implementing the art, sound, and levels. Connected these elements into the finished playable experience.', tags: ['Gameplay Programming', 'Systems', 'Art Integration', 'Audio Integration', 'Level Implementation', 'C#', 'Unity'], accent: 'cyan', href: 'https://takospec.itch.io/end-of-the-stickin-world', platform: 'itch.io' },
+  { index: '01', title: 'Artist-Facing Asset Cleanup Tool', eyebrow: 'Unreal Editor Utility Widget', description: 'An artist-facing Unreal Editor tool that scans selected Content Browser folders against the open level, then displays unused assets in a dedicated browser-style tab for review, multi-select deletion, and recursive empty-folder cleanup.', tags: ['Unreal Engine', 'Editor Utility Widget', 'Blueprint', 'Asset Management', 'Content Browser'], accent: 'amber', href: 'https://www.artstation.com/artwork/dLyBk3', platform: 'ArtStation', icon: FolderSearch },
+  { index: '02', title: 'Procedural Ecosystem Generator', eyebrow: 'Artist-facing PCG tool', description: 'A configurable biome system for trees, grass, and rocks with terrain projection, slope and height rules, weighted variation, seeds, paint masks, spline exclusions, and reusable PCG subgraphs.', tags: ['UE 5.6.1', 'PCG', 'Blueprint', 'Procedural workflows'], accent: 'lime', href: 'https://www.artstation.com/artwork/AoZQXW', platform: 'ArtStation', icon: Sparkles },
+  { index: '03', title: 'Selenium UI Automation Suite', eyebrow: 'Virgin Mobile UAE / Website QA', description: 'Built for Virgin Mobile UAE to automate page-by-page website checks across 21 customer journeys. Implemented the Python/Selenium suite, reusable page objects, content and navigation validation, load-time tracking, CSV reports, screenshot evidence, and Jira Xray reporting.', tags: ['Python', 'Selenium', 'Page Objects', 'CSV Reporting', 'Jira Xray'], accent: 'amber', href: 'https://github.com/Isshan11/selenium-ui-automation-portfolio', platform: 'GitHub', icon: GitBranch },
+  { index: '04', title: "End of the Stickin' World", eyebrow: 'Gameplay programming & implementation', description: 'Handled the complete programming side of the game, writing its gameplay code and systems and implementing the art, sound, and levels. Connected these elements into the finished playable experience.', tags: ['Gameplay Programming', 'Systems', 'Art Integration', 'Audio Integration', 'Level Implementation', 'C#', 'Unity'], accent: 'cyan', href: 'https://takospec.itch.io/end-of-the-stickin-world', platform: 'itch.io', icon: Gamepad2 },
 ];
 
 const skillGroups = [
@@ -37,10 +38,11 @@ const visualProjects = [
 ];
 
 function SystemCard({ project }: { project: (typeof systemProjects)[number] }) {
+  const Icon = project.icon;
   const content = (
     <>
       <div className="system-index">{project.index}</div>
-      <div className="system-icon" aria-hidden="true">{project.index === '01' ? <Sparkles /> : project.index === '02' ? <GitBranch /> : <Gamepad2 />}</div>
+      <div className="system-icon" aria-hidden="true"><Icon /></div>
       <div className="system-content">
         <p className="project-eyebrow">{project.eyebrow}</p><h3>{project.title}</h3><p>{project.description}</p>
         <ul className="tag-list" aria-label={`${project.title} technologies`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
@@ -128,11 +130,11 @@ export default function Home() {
           <p>Production-minded systems that solve real problems while keeping the artist experience clear and flexible.</p>
         </div>
         <div className="system-list">
-          {systemProjects.slice(0, 2).map((project) => <SystemCard project={project} key={project.index} />)}
+          {systemProjects.slice(0, 2).map((project) => <SystemCard project={project} key={project.title} />)}
         </div>
         <details className="reveal-panel">
           <summary><span>Show more tools &amp; systems</span><span className="summary-state" aria-hidden="true" /></summary>
-          <div className="system-list reveal-content">{systemProjects.slice(2).map((project) => <SystemCard project={project} key={project.index} />)}</div>
+          <div className="system-list reveal-content">{systemProjects.slice(2).map((project) => <SystemCard project={project} key={project.title} />)}</div>
         </details>
       </section>
 
